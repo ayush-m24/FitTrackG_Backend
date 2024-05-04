@@ -1,4 +1,5 @@
-const jwt = require('jsonwebtoken');
+import jwt from 'jsonwebtoken';
+
 
 function checkAuth(req, res, next) {
     //get the details from the cookies
