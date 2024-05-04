@@ -30,7 +30,7 @@ require('./db')
 
 //Apply bodyParser middleware to parse JSON bodies
 app.use(bodyParser.json());
-const allowedOrigins = ['http://localhost:3000', 'https://fittrackg.onrender.com']; //Frontend is in "http://localhost:3000". Allow access to backend running on localhost8000.
+const allowedOrigins = ['http://localhost:3000', 'https://fit-track-g-frontend-7f4em82in-ayushs-projects-163efa4a.vercel.app']; //Frontend is in "http://localhost:3000". Allow access to backend running on localhost8000.
 
 app.use(
     cors({ //Ensure safety by restricting access to the backend
