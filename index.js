@@ -11,6 +11,9 @@ const PORT = 8000;
 //Import the cookie-parser module for parsing cookies attached to the client request object
 const cookieParser = require('cookie-parser');
 
+//Import and configure environment variables from the .env file
+require('dotenv').config();
+
 const authRoutes = require('./Routes/Auth');
 const calorieIntakeRoutes = require('./Routes/CalorieIntake');
 const adminRoutes = require('./Routes/Admin');
@@ -24,13 +27,15 @@ const workoutRoutes = require('./Routes/WorkoutPlans');
 const reportRoutes = require('./Routes/Report'); 
 const badgesRoutes = require('./Routes/Badges');
 
-//Import and configure environment variables from the .env file
-require('dotenv').config();
+
 //Establish a connection to the database by importing the database configuration
 require('./db')
 
 //Apply bodyParser middleware to parse JSON bodies
 app.use(bodyParser.json());
+//For storing cookies. (Auth token, refresh token) Cookie parser intitialized to recognize cookies.
+app.use(cookieParser()); 
+
 const allowedOrigins = ['http://localhost:3000', 'https://fit-track-g-frontend.vercel.app']; //Frontend is in "http://localhost:3000". Allow access to backend running on localhost8000.
 
 app.use(
@@ -47,8 +52,7 @@ app.use(
         allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept']
     })
 );
-//For storing cookies. (Auth token, refresh token) Cookie parser intitialized to recognize cookies.
-app.use(cookieParser()); 
+
 
 
 app.use('/auth', authRoutes);
