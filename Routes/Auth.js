@@ -10,6 +10,8 @@ const jwt = require('jsonwebtoken');
 const bcrypt = require('bcrypt');
 const nodemailer = require('nodemailer');
 
+require('dotenv').config();
+
 //ejjf qsny insw ngtr
 //To allow sending email using the specified email below to send email to website users. 
 const transporter = nodemailer.createTransport({

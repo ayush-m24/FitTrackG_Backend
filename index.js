@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 
+
 //Import the body-parser module for parsing incoming request bodies
 const bodyParser = require('body-parser');
 //Import the cors module to enable Cross-Origin Resource Sharing

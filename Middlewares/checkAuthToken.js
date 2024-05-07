@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken');
+require('dotenv').config();
 
 function checkAuth(req, res, next) {
     //get the details from the cookies
