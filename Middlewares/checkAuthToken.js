@@ -26,8 +26,8 @@ function checkAuth(req, res, next) {
                     const newRefreshToken = jwt.sign({ userId: refreshDecoded.userId }, process.env.REFRESH_TOKEN_SECRET, { expiresIn: '10d' });
 
                     //Set the new tokens as cookies in the response
-                    res.cookie('authToken', newAuthToken, { httpOnly: true, secure: true, sameSite: 'None', path: '/', domain: 'https://fittrackg-backend.onrender.com' });
-                    res.cookie('refreshToken', newRefreshToken, { httpOnly: true, secure: true, sameSite: 'None', path: '/', domain: 'https://fittrackg-backend.onrender.com' });
+                    res.cookie('authToken', newAuthToken, { httpOnly: true, secure: true, sameSite: 'None', path: '/', domain: 'https://fit-track-g-frontend.vercel.app' });
+                    res.cookie('refreshToken', newRefreshToken, { httpOnly: true, secure: true, sameSite: 'None', path: '/', domain: 'https://fit-track-g-frontend.vercel.app' });
 
                     //Continue processing the request with the new auth token
                     req.userId = refreshDecoded.userId;
