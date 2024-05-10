@@ -25,7 +25,7 @@ async function awardBadge(userId, category, currentValue) {
     if (!user) return;
 
     const goals = {
-        "Calorie Intake": user.maxCalorieIntake,
+        "Calorie Intake": 20000,
         "Sleep": user.goalSleep,
         "Steps": user.goalSteps,
         "Water": user.goalWater
