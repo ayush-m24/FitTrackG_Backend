@@ -47,6 +47,8 @@ router.post('/addsleepentry', authTokenHandler, async (req, res) => {
     //Save the updated user document
     await user.save();
 
+
+    const sleepGoal = user.goalSleep || 60; // Default step goal if not set
     //Award badge if goal is met
     await awardBadge(req.userId, "Sleep", durationInHrs);
 
