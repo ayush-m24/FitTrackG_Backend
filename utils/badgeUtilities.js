@@ -27,12 +27,12 @@ async function awardBadge(userId, category, currentValue) {
     const goals = {
         "Calorie Intake": user.maxCalorieIntake,
         "Sleep": user.goalSleep,
-        "Steps": user.gaolSteps,
+        "Steps": user.goalSteps,
         "Water": user.goalWater
     };
 
     const badgePaths = {
-        "Calorie Intake": "/images/calories.png",
+        "Calorie Intake": "/images/calorieIntake.png",
         "Sleep": "/images/sleep.png",
         "Steps": "/images/steps.png",
         "Water": "/images/water.png"
