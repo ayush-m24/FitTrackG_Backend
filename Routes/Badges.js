@@ -27,7 +27,7 @@ function calculateMaxCalorieIntake(user) {
     return maxCalorieIntake;
 }
 
-//Endpoint to get the badges state for a user
+//Endpoint to get the badges state for a user.
 router.get('/badges', checkAuthToken, async (req, res) => {
     try {
         const userId = req.userId;
