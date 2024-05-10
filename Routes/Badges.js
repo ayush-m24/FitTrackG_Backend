@@ -17,11 +17,11 @@ function calculateMaxCalorieIntake(user) {
     }
 
     if (user.goal === 'weightLoss') {
-        maxCalorieIntake = BMR - 500;
+        maxCalorieIntake = BMR - 500 * 10;
     } else if (user.goal === 'weightGain') {
-        maxCalorieIntake = BMR + 500;
+        maxCalorieIntake = BMR + 500 * 10;
     } else {
-        maxCalorieIntake = BMR; //maintenance or unspecified goal
+        maxCalorieIntake = BMR * 10; //maintenance or unspecified goal
     }
 
     return maxCalorieIntake;
