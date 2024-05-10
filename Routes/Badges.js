@@ -37,7 +37,7 @@ router.get('/badges', checkAuthToken, async (req, res) => {
         }
 
         //Retrieve user-specific goal values
-        const maxCalorieIntake = calculateMaxCalorieIntake(user);
+        const maxCalorieIntake = 20000;
         const goalSleep = user.goalSleep || 60; //Assuming a default if not set
         const goalSteps = user.goalSteps || 75000; //Assuming a default if not set
         const goalWater = user.goalWater || 40000; //Assuming a default if not set
